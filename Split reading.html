@@ -51,43 +51,44 @@
 <p>When learning Japanese, using this add-on is much easier when the
 <a href="https://ankiweb.net/shared/info/3918629684">Japanese Support</a> add-on
 has been installed first.</p>
-<p>This add-on assumes that there is a field called “Reading” and that
-this reading field contains both the Japanese word itself (kanji and
-kana written in line) and the reading of the kanji (furigana).  The
-furigana should be in square brackets
-(“<a href="http://www.fileformat.info/info/unicode/char/5b/index.htm">[</a>”,
-“<a href="http://www.fileformat.info/info/unicode/char/5d/index.htm">]</a>”)
+<p>This add-on assumes that there is a field called <q>Reading</q> and
+that this reading field contains both the Japanese word itself (kanji
+and kana written in line) and the reading of the kanji (furigana).
+The furigana should be in square brackets
+(<q><a href="http://www.fileformat.info/info/unicode/char/5b/index.htm">[</a></q>,
+<q><a href="http://www.fileformat.info/info/unicode/char/5d/index.htm">]</a></q>)
 after the kanji. A
 <a href="http://www.fileformat.info/info/unicode/char/20/index.htm">space</a> is
 used as the break between leading characters and the kanji for which
-there is a reading. For example, for the expression「この間」, the
-reading field should contain 「<code>この 間[あいだ]</code>」.  Note the space
-between 「の」 and 「間」 and the square brackets around the 「あいだ」.</p>
+there is a reading. For example, for the expression<q lang="ja">この間
+</q>, the reading field should contain <q lang="ja"><code>この 間
+[あいだ]</code></q>.  Note the space between <q lang="ja">の</q> and <q
+lang="ja">間</q> and the square brackets around the <q lang="ja">あいだ
+</q>.</p>
 <p>Most of the time these details are not important. This square-bracket
 style is exactly what is produced by the Japanese Support add-on. When
 creating cards you typically just type the expression into its field,
 and when you go to the meaning field to type the translation, the
 reading field is filled automatically in the right format.</p>
 <h2>Using two fields</h2>
-<p>Some people store just the kana in the “Reading” field, for example by
+<p>Some people store just the kana in the <q>Reading</q> field, for example by
 using <code>%r</code> instead of <code>%e[%r]</code> to fill the field in the settings of
 the <a href="https://ankiweb.net/shared/info/934748696">Yomichan</a> add-on.
 With this set-up, downloads from JapanesePod will not work without
 change. By default the add-on expects to find the kanji in the reading
 field.</p>
-<figure>
-<img src="images/update_kanji_kana.png" alt="Anki Download audio dialog
-window. Text: Requests send to the download sites. Reading. Edit texts:
-夫 おっと, Text: Expression. Edit text 夫.">
+<figure> <img src="images/update_kanji_kana.png" alt="Anki Download
+audio dialog window. Text: Requests send to the download
+sites. Reading. Edit texts:夫 おっと, Text: Expression. Edit text 夫.">
 <figcaption>Kanji and kana in different edit fields.</figcaption>
 </figure>
 
-<p>Set the <code>meaning_in_reading_field</code> switch to <code>False</code> in the
-<a href="https://github.com/ospalh/anki-addons/blob/master/downloadaudio/get_fields.py#L45"><code>get_fields.py</code></a>
+<p>Set <code>split_kanji_kana</code> to <code>True</code> in the
+<a href="https://github.com/ospalh/anki-addons/blob/master/downloadaudio/get_fields.py#L43"><code>get_fields.py</code></a>
 file when you use this set-up. With this the JapanesePod downloader
-takes the kanji and kana from separate fields. Check with the “Manual
-audio” menu item, there should be a line with two edit fields and the
-kanji in the left and the kana in the right field.</p>
+takes the kanji and kana from separate fields. Check with the
+<q>Manual audio</q> menu item, there should be a line with two edit
+fields and the kanji in the left and the kana in the right field.</p>
                 
 	</div>
 

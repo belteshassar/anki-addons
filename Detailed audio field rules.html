@@ -53,7 +53,7 @@
                 <p>In most cases – including learning Japanese or Chinese with the
 <a href="https://ankiweb.net/shared/info/3918629684">standard</a>
 <a href="https://ankiweb.net/shared/info/3448800906">add-ons</a> installed –
-<a href="Add%20audio%20field.html">adding a field</a> “Audio” to the note and to at
+<a href="Add%20audio%20field.html">adding a field</a> <q>Audio</q> to the note and to at
 least <a href="Add%20audio%20to%20cards.html">one side of a card</a> is enough, but more
 sophisticated use of the add-on is also possible.</p>
 <p>This page describes how the add-on matches audio and text fields and
@@ -66,23 +66,24 @@ fields are:</p>
 <ul>
 <li>When there is a field called
   <ul>
-    <li>“Audio” or</li>
-    <li>“Sound”,</li>
+    <li><q>Audio</q> or</li>
+    <li><q>Sound</q>,</li>
   </ul>
   the add-on looks for a field called
   <ul>
-    <li>“Expression” or</li>
-    <li>“Word”</li>
+    <li><q>Expression</q> or</li>
+    <li><q>Word</q></li>
   </ul></li>
-<li>When there is an “Audio” or “Sound” field, but no “Expression” or
-  “Word” field, the first field is used as the source.</li>
-<li>For fields where “Audio” or “Sound” is a substring, this word is
-  removed and the rest used to look for a field. For example, to get
-  pronunciations for a field called “Example”, you should add a field
-  named “Example Audio” (or “Audio Example”). When downloading, the
-  add-on will find the field “Example Audio”, strip the “Audio”, clean
-  up the space to get “Example” and look for that field to get the
-  text.</li>
+<li>When there is an <q>Audio</q> or <q>Sound</q> field, but no
+  <q>Expression</q> or <q>Word</q> field, the first field is used as
+  the source.</li>
+<li>For fields where <q>Audio</q> or <q>Sound</q> is a substring, this
+  word is removed and the rest used to look for a field. For example,
+  to get pronunciations for a field called <q>Example</q>, you should
+  add a field named <q>Example Audio</q> (or <q>Audio
+  Example</q>). When downloading, the add-on will find the field
+  <q>Example Audio</q>, strip the <q>Audio</q>, clean up the space to
+  get <q>Example</q> and look for that field to get the text.</li>
 </ul>
 <p>To get Japanese pronunciations from
 <a href="http://japanesepod101.com">JapanesePod101.com</a> there has to be the
@@ -90,36 +91,36 @@ reading stored in the note. The detailed rules are:</p>
 <ul>
 <li>When there is a field called
   <ul>
-    <li>“Audio” or</li>
-    <li>“Sound”,</li>
+    <li><q>Audio</q> or</li>
+    <li><q>Sound</q>,</li>
   </ul>
   the add-on looks for a field called
   <ul>
-    <li>“Reading”,</li>
-    <li>“Kana”,</li>
-    <li>「かな」 or</li>
-    <li>「仮名」</li>
+    <li><q>Reading</q>,</li>
+    <li><q>Kana</q>,</li>
+    <li><q lang="ja">かな</q> or</li>
+    <li><q lang="ja">仮名</q></li>
   </ul></li>
 <li>The substring rule is different for this case. For fields where
-  “Audio” or “Sound” is a substring, this word is not removed, but
-  the add-on looks for fields where that word has been
-  <em>replaced</em> with  one from the “Reading” list. For example, when
-  there is a field called “Japanese Reading”, add a field “Japanese
-  Audio” to download from the reading field.</li>
+  <q>Audio</q> or <q>Sound</q> is a substring, this word is not
+  removed, but the add-on looks for fields where that word has been
+  <em>replaced</em> with one from the <q>Reading</q> list. For example, when
+  there is a field called <q>Japanese Reading</q>, add a field
+  <q>Japanese Audio</q> to download from the reading field.</li>
 <li>There is no first field rule for readings.</li>
 </ul>
-<p>All of these field names are not case sensitive. For example, “expression”,
-“auDIO” or “SOUND” will work.</p>
+<p>All of these field names are not case sensitive. For example, <q>expression</q>,
+<q>auDIO</q> or <Q>SOUND</Q> will work.</p>
 <p>The field names are defined in the lists in the file
-“<a href="https://github.com/ospalh/anki-addons/blob/master/downloadaudio/get_fields.py"><code>downloadaudio/get_fields.py</code></a>”
+<q><a href="https://github.com/ospalh/anki-addons/blob/master/downloadaudio/get_fields.py"><code>downloadaudio/get_fields.py</code></a></q>
 in the add-ons folder. That folder can be displayed through the
-“Tools/Add-ons/Open Add-ons Folder...” menu item, and names can be
+<q>Tools/Add-ons/Open Add-ons Folder...</q> menu item, and names can be
 added to the lists.</p>
 <h2>Examples</h2>
 <p>I use complex note types with many fields in my personal
 collection. Field lists from these models can be used to demonstrate
 real-life use of these rules.</p>
-<h3>Model “Standard — Japanese”</h3>
+<h3>Model <q>Standard — Japanese</q></h3>
 <p>My main Japanese vocabulary model has <span class="qtbase
 morefields">these fields</span>:</p>
 <ul>
@@ -128,23 +129,23 @@ morefields">these fields</span>:</p>
 <li>Deutsch</li>
 <li>Zusatz</li>
 <li>Audio</li>
-<li>例文</li>
-<li>例文 Audio</li>
+<li><span lang="ja">例文</span></li>
+<li><span lang="ja">例文</span> Audio</li>
 </ul>
 <p>Applying the rules means that:</p>
 <ul>
-<li>The plain rule matches the field  “Expression” to the field
-  “Audio”. The GoogleTTS downloader will work from the expression and
+<li>The plain rule matches the field  <q>Expression</q> to the field
+  <q>Audio</q>. The GoogleTTS downloader will work from the expression and
   download into the audio field.</li>
-<li>The readings rule matches the field  “Reading” to the field
-  “Audio”. The JapanesePod downloader will work from the reading and
-  download into the audio field, too.</li>
-<li>The plain substring rule matches the field “”例文” to the field
-  “例文 Audio”</li>
-<li>For the fields “Deutsch” and “Zusatz” (and the audio fields
-  themselves), nothing is downloaded.</li>
+<li>The readings rule matches the field <q>Reading</q> to the field
+  <q>Audio</q>. The JapanesePod downloader will work from the reading
+  and download into the audio field, too.</li>
+<li>The plain substring rule matches the field <q lang="ja">例文</q> to
+  the field <q><span lang="ja">例文</span> Audio</q></li>
+<li>For the fields <q lang="de">Deutsch</q> and <q lang="de">Zusatz</q>
+  (and the audio fields themselves), nothing is downloaded.</li>
 </ul>
-<h3>Model “Land, state etc.”</h3>
+<h3>Model <q lang="de">Land, state etc.</q></h3>
 <p>For my world-wide geography deck, i use  <span class="qtbase
 morefields">the fields</span>:</p>
 <ul>
@@ -169,13 +170,13 @@ audio for these field pairs:</p>
 <li>NameAlternative → NameAlternative_Audio</li>
 <li>CapitalAlternative → CapitalAlternative_Audio</li>
 </ul>
-<h3>Model “都道府県 – Japanese”</h3>
+<h3>Model <q lang="en"><span lang="ja">都道府県</span> – Japanese</q></h3>
 <p>Here some of the  fields are:</p>
 <ul>
-<li>Präfektur_ローマ字</li>
-<li>都道府県</li>
-<li>都道府県_Reading</li>
-<li>都道府県_Audio</li>
+<li>Präfektur_<span lang="ja">ローマ字</span></li>
+<li><span lang="ja">都道府県</span></li>
+<li><span lang="ja">都道府県</span>_Reading</li>
+<li><span lang="ja">都道府県</span>_Audio</li>
 <li>Nummer</li>
 <li>Einwohner</li>
 <li>Fläche</li>
@@ -183,10 +184,11 @@ audio for these field pairs:</p>
 </ul>
 <p>Here the plain substring and the reading substring rules match:</p>
 <ul>
-<li>The plain substring rule matches the field  “都道府県” to the field
-  “都道府県_Audio”.</li>
-<li>The readings substring rule matches the field  “都道府県_Reading” to the field
-  “都道府県_Audio”.</li>
+<li>The plain substring rule matches the field <q lang="ja">都道府県</q>
+  to the field <q><span lang="ja">都道府県</span>_Audio</q>.</li>
+<li>The readings substring rule matches the field <q><span lang="ja">都道
+  府県</span>_Reading</q> to the field <q><span lang="ja">都道府県
+  </span>_Audio</q>.</li>
 </ul>
 <p>Here, too, pronunciations from different source texts are downloaded
 to the same field</p>

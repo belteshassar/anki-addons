@@ -68,10 +68,10 @@ as before.</p>
 names of each card are reduced to the characters <code>a</code> to <code>z</code>, <code>A</code> to
 <code>Z</code>, <code>0</code> to <code>9</code> and <code>_</code> and added as classes as well, in the form of
 <code>model_NN</code> and <code>template_NN</code>. As an example, the second card of a
-model or note type called “Satz Japanese 日本語” and that is called
-“Hörübung” would have the CSS classes <code>loc card card2
-model_SatzJapanese template_Hrbung</code>. These classes can be used to
-build CSS selectors.</p>
+model or note type called <q lang="de">Satz Japanese <span lang="ja">日
+本語</span></q> and that is called <q lang="de">Hörübung</q> would
+have the CSS classes <code>loc card card2 model_SatzJapanese
+template_Hrbung</code>. These classes can be used to build CSS selectors.</p>
 <h3>Standard use</h3>
 <p>To apply a style to the whole card only on a specific computer, use the
 <code>user_sytle.css</code> file on that computer. You should use the CSS selector
@@ -106,18 +106,19 @@ example, to change the style of the Japanese text, use <code>.loc
 
 <h2>Different cards</h2>
 <p>Applying different styles to different cards works in a similar way.</p>
-<p>As an example, in the past i used a standard style of black on light blue for
-standard cards and black and light red for grammar cards. In the
-alternative style i used light colored text on dark background, dark
-green for normal cards and dark red for grammar cards. The standard
-cards use the the <code>.loc.card</code> selector described above. The model name
-of the grammar cards is “Grammatik VHS — Japanese” and so i used
+<p>As an example, in the past i used a standard style of black on light
+blue for standard cards and black and light red for grammar cards. In
+the alternative style i used light colored text on dark background,
+dark green for normal cards and dark red for grammar cards. The
+standard cards use the the <code>.loc.card</code> selector described above. The
+model name of the grammar cards is <q lang="de">Grammatik VHS —
+Japanese</q> and so i used
 <blockquote><pre><code>.loc.card.model_grammatikvhsjapanese{
   background-color: #64354c;
   color: #d9b7ce;}</code></pre></blockquote>
 to set up the pink-on-dark-red.</p>
 <h2>Night mode</h2>
-<p>The add-on adds a “Mode (extra class)” sub-menu to the “Edit” menu to
+<p>The add-on adds a <q>Mode (extra class)</q> sub-menu to the <q>Edit</q> menu to
 switch between night mode and normal (day) mode.</p>
 <blockquote class="nb">
 Without further set-up, this switch has no visible effect,
@@ -139,11 +140,11 @@ AnkiDroid code i intend to write to bring night mode there.</p>
 <h3>More modes</h3>
 <p>More display modes can be used. Edit the
 <a href="https://github.com/ospalh/anki-addons/blob/master/local_css_and_diy_night_mode.py">source file</a>.</p>
-<p>Look for “<code>extra_classes_list</code>” near the top. Duplicate the <code>Night
+<p>Look for <q><code>extra_classes_list</code></q> near the top. Duplicate the <code>Night
 mode</code> line and change the texts <em>after</em> the <code>class</code> and <code>display</code>
 bits.</p>
 <p>For example, i use the
-“<a href="http://ethanschoonover.com/solarized">solarized</a>” color schemes. I
+<q><a href="http://ethanschoonover.com/solarized">solarized</a></q> color schemes. I
 use the light theme most of the time but sometimes want the dark
 theme. I also sometimes want to see the cards in black-on-white.</p>
 <p>The point here is that the dark scheme can’t really be derived from
@@ -161,7 +162,7 @@ the light mode, so it <em>has</em> to be set explicitly in a style sheet.</p>
   color: black;
   background-color: white;
 }</code></pre></blockquote></p>
-<p>And i have added “<code>highc</code>” as entry to the menu:
+<p>And i have added <q><code>highc</code></q> as entry to the menu:
 <blockquote><pre><code>extra_classes_list = [
     {'class': 'night', 'display': u'Night mode'},
     {'class': 'highc', 'display': u'High contrast mode'},
@@ -178,7 +179,7 @@ systems), soft links can be used instead: <code>ln -sf day_user_style.css
 user_style.css</code>.</p>
 <h3>Reloading</h3>
 <p>The user style is loaded when the profile is opened. To reload the
-style after a change go to the “Switch Profiles” dialog and re-open the
+style after a change go to the <q>Switch Profiles</q> dialog and re-open the
 profile.</p>
 <h2>AnkiDroid</h2>
 <p>People that like to build their own AnkiDroid version can take a look

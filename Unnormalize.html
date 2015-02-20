@@ -48,7 +48,7 @@
     </figure>
 
     
-    <p>This can be used to fix a problem caused by adding files “sideways” on
+    <p>This can be used to fix a problem caused by adding files <q>sideways</q> on
 Macs.</p>
 <blockquote class="nb">
 This add-on does not work with newer versions of Anki. On the other
@@ -70,22 +70,22 @@ file names on Macs, many
 non-<a href="http://en.wikipedia.org/wiki/ASCII">ASCII</a> characters are
 <a href="http://en.wikipedia.org/wiki/Precomposed_character#Comparing_precomposed_and_decomposed_characters">decomposed</a>.
 For example, the character
-“<a href="http://www.fileformat.info/info/unicode/char/00fc/index.htm">ü</a>” is
+<q><a href="http://www.fileformat.info/info/unicode/char/00fc/index.htm">ü</a></q> is
 stored as
-“<a href="http://www.fileformat.info/info/unicode/char/0075/index.htm">u</a>”
+<q><a href="http://www.fileformat.info/info/unicode/char/0075/index.htm">u</a></q>
 plus the
 <a href="http://www.fileformat.info/info/unicode/char/0308/index.htm">dots</a> as
 an extra character.</p>
 <p>Most of the time this is completely harmless. But when the text in the
-field contains an un-decomposed character, for example “<code>&lt;img
-src="Tübingen_Neckarfront.jpg" /&gt;</code>” and that text together with the
-file with the decomposed name, “<code>Tübingen_Neckarfront.jpg</code>”, are
-synced to a Linux or Windows machine, those two strings do not point
-to the same file. The result is that the file isn’t show during
-review. At the moment (January 2013, Anki 2.0.6), the
-“Tools/Maintenance/Unused media...”  file will not detect this
-problem, it only becomes apparent during reviews or when browsing the
-cards.</p>
+field contains an un-decomposed character, for example <q
+lang="de"><code>&lt;img src="Tübingen_Neckarfront.jpg" /&gt;</code></q> and that text
+together with the file with the decomposed name, <q
+lang="de"><code>Tübingen_Neckarfront.jpg</code></q>, are synced to a Linux or
+Windows machine, those two strings do not point to the same file. The
+result is that the file isn’t show during review. At the moment
+(January 2013, Anki 2.0.6), the <q>Tools/Maintenance/Unused
+media...</q> file will not detect this problem, it only becomes
+apparent during reviews or when browsing the cards.</p>
 <h2>The solution</h2>
 <p>The add-on goes through the collection and renames media file to those
 used in the collection when the on-disk name is the Mac OS X version

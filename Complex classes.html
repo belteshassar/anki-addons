@@ -83,27 +83,29 @@ as styling and
 &lt;div class="nhg redish lnsz"&gt;{{furikanji:Reading}}&lt;/div&gt;</code></pre></blockquote>
 as back template.</p>
 <h2>Separator for kana</h2>
-<p>Some people like to use the interpunct <span class="qtbase nakaguro">「
-<a href="http://www.fileformat.info/info/unicode/char/30fb/index.htm">・</a>」
-</span> to separate the kana for different kanji. For example, for the
-word 「中黒」 the text 「<code>なか・ぐろ</code>」 is used in a reading field.</p>
+<p>Some people like to use the interpunct <span class="qtbase
+nakaguro"><q
+lang='ja'><a href="http://www.fileformat.info/info/unicode/char/30fb/index.htm">・</a></q></span>
+to separate the kana for different kanji. For example, for the word <q
+lang='ja'>中黒</q> the text <q lang='ja'><code>なか・ぐろ</code></q> is used in a
+reading field.</p>
 <p>An alternative is to use the
 <a href="https://ankiweb.net/shared/info/3918629684">Japanese Support</a> add-on
 to automatically generate readings. They are usually by word, and have
 to be rearranged slightly by hand. In the example, you would type the
-kanji「中黒」 into the “Expression” field. With a tab or mouse click,
-the “Reading” field would be filled with 「中黒[なかぐろ]」. For this
-trick to work, this string would have to changed to 「中[なか]黒[ぐろ]」
+kanji<q lang='ja'>中黒</q> into the <q>Expression</q> field. With a tab or mouse click,
+the <q>Reading</q> field would be filled with <q lang='ja'>中黒[なかぐろ]</q>. For this
+trick to work, this string would have to changed to <q lang='ja'>中[なか]黒[ぐろ]</q>
 by hand, by adding an extra pair of square brackets and dragging
-the「なか」 into them.</p>
+the<q lang='ja'>なか</q> into them.</p>
 <p>The adding of the interpunct can be done using two CSS pseudo-classes,
-“<code>:after</code>” and “<code>:last-child</code>”:
+<q><code>:after</code></q> and <q><code>:last-child</code></q>:
 <blockquote class=lsting><pre><code>&lt;div class="interpuncts"&gt;{kana:Reading}}&lt;/div&gt;</code></pre></blockquote></p>
 <blockquote class=lsting><pre><code>.interpuncts .kana:after{content:"・";}
 .interpuncts .kana:last-child:after{content: none;}</code></pre></blockquote>
 
 <p>The advantage of this method over using a pure kana is that with this
-method furigana can be used as well, with “<code>{{furigana:Reading}}</code>”.</p>
+method furigana can be used as well, with <q><code>{{furigana:Reading}}</code></q>.</p>
 <h2>Furigana on hover</h2>
 <p>This method works without this add-on as well.</p>
 <p>To show furigana only when the mouse hovers above it use:

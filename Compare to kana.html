@@ -51,10 +51,10 @@
     </figure>
 
     
-    <p>A typical model for learning Japanese has a field called “Reading”. In
+    <p>A typical model for learning Japanese has a field called <q>Reading</q>. In
 that field, the reading (kana) is stored <em>along with the kanji</em>. For
 example, in a fact defining the Japanese word for citizens, the
-reading field would look like 「住民[じゃうみん]」. Like this, the
+reading field would look like <q lang="ja">住民[じゃうみん]</q>. Like this, the
 standard templates <code>{{furigana:Reading}}</code> and <code>{{kana:Reading}}</code> work.</p>
 <p><span class="clear" />
 <figure>
@@ -72,11 +72,9 @@ be marked in red. This add-on filters the text used as reference for
 the typed text the same way the <code>{kana:NN}</code> template dose and compares
 the typed text only with the kana part of the stored text.</p>
 <h2>Setup</h2>
-<p>The kanji are removed when the model name contains the word “Japanese”
-and the field name contains “Reading”. Use <code>{{type:Reading}}</code> or
+<p>The kanji are removed when the model name contains the word <q>Japanese</q>
+and the field name contains <q>Reading</q>. Use <code>{{type:Reading}}</code> or
 <code>{{type:NN Reading}}</code> in your cards.</p>
-<p>Please also make sure that you are running a version of Anki ≥ 2.0.9,
-as the comparison mechanism was changed for that release.</p>
 <h3>CSS</h3>
 <p>The example images where taken with a somewhat complex note
 type. Without further set-up, the background rather than the text of

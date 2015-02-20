@@ -51,8 +51,8 @@
     </figure>
 
     
-    <p>This add-on adds support for furikanji, adds two other templates and
-slightly changes the way kanji and readings are parsed.</p>
+    <p>This add-on adds support for furikanji and slightly changes the way
+kanji and readings are parsed.</p>
 <blockquote class=nb>
 This add-on is for use with the desktop
 client only. Using features of this add-on with mobile clients or
@@ -75,32 +75,29 @@ square brackets.">
 it does not work with AnkiWeb, AnkiDroid or AnkiMobile. There the text
 is rendered as it is seen in the edit screen, with the square
 brackets.</p>
-<h3><span id="droid">feature-furikanji</span></h3>
+<h3><span id="droid">Furikanji and AnkiDroid</span></h3>
 <figure> <img src="images/furikanji-mydroid.png" alt="Text: 起きなよい
 い加減おwith きなよいいかげん as ruby and きなよいいかげん with 起きな
 よいい加減お as ruby. The kanji of the ruby are marked in orange.">
 <figcaption> AnkiDroid can be patched to use furikanji.  </figcaption>
 </figure>
 
-<p>Daring spirits can take a look at my
-<a href="https://github.com/ospalh/Anki-Android/tree/feature-furikanji">furikanji branch</a>
-of AnkiDroid.  I have added the equivalent of this add-on, providing
-furikanji on AnkiDroid. You should merge this branch into the newest
-version of AnkiDroid, not just use that branch as-is.</p>
+<p>Daring spirits can take a look at my version of the
+<a href="https://github.com/ospalh/Anki-Android/blob/develop-ospalh-special/AnkiDroid/src/main/java/com/ichi2/libanki/hooks/FuriganaFilters.java"><code>FuriganaFilters.java</code></a>
+file and add furikanji to their own version of AnkiDroid</p>
 <p>This may not work with Android versions &lt; 3.0</p>
 <h2>CSS classes</h2>
 <p>Text that uses the now four templates <code>furigana</code>, <code>furikanji</code>, <code>kana</code>
 and <code>kanji</code> gets appropriate CSS classes. The <code>ruby</code> elements have the
 additional classes  <code>furigana</code> and <code>furikanji</code>; the kana and kanji
 texts get wrapped in spans with classes <code>kana</code>  and
-<code>kanji</code>. Additionally, the base of the ruby gets wrapped in spans with
-the <code>rb</code> class.</p>
+<code>kanji</code>.</p>
 <p>See the <a href="Complex%20classes.html">complex classes</a> page for examples on
 how to use these classes.</p>
 <h2>Furigana, kanji and reading templates</h2>
 <p>The <code>{{furigana:Field NN}}</code>, <code>{{kanji:Field NN}}</code> and <code>{{kana:Field
 NN}}</code> templates have been modified. The standard templates use ASCII
-spaces (“ ”) and “&gt;” characters to determine the beginning of the
+spaces (<q> </q>) and <q>&gt;</q> characters to determine the beginning of the
 kanji text. The modified version treats only characters in the word
 character class as ruby base.</p>
 <p>This means that commas, newlines,
@@ -110,8 +107,8 @@ character class as ruby base.</p>
 <h3>Limitations</h3>
 <ul>
 <li>Leading kana are not automatically separated. For example the
-  reading for 「お釣り」 must still be written with an ASCII space or
-  other separator between the 「お」 and the 「釣」: 「お 釣[つ]り」.</li>
+  reading for <q lang="ja">お釣り</q> must still be written with an ASCII space or
+  other separator between the <q lang="ja">お</q> and the <q lang="ja">釣</q>: <q lang="ja">お 釣[つ]り</q>.</li>
 <li>This mechanism only work with Python version 2.7.</li>
 <li>As the other functions, this works only on the desktop client.</li>
 </ul>
