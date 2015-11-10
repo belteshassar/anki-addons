@@ -30,6 +30,7 @@ from .islex import IslexDownloader
 from .japanesepod import JapanesepodDownloader
 from .leo import LeoDownloader
 from .lexin import LexinDownloader
+from .lexin2 import LexinDownloader2
 from .macmillan_american import MacmillanAmericanDownloader
 from .macmillan_british import MacmillanBritishDownloader
 from .mw import MerriamWebsterDownloader
@@ -42,6 +43,7 @@ downloaders = [
     WiktionaryDownloader(),
     LeoDownloader(),
     LexinDownloader(),
+    LexinDownloader2(),
     MerriamWebsterDownloader(),
     # MacmillanAmericanDownloader(),
     MacmillanBritishDownloader(),
