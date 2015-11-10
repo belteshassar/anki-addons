@@ -4,6 +4,8 @@ import urllib2
 import json
 from BeautifulSoup import BeautifulSoup
 
+from .lexin import munge_word
+
 from .downloader import AudioDownloader
 from ..download_entry import DownloadEntry
 
@@ -59,7 +61,8 @@ class LexinDownloader2(AudioDownloader):
             except AttributeError:
                 pass
             try:
-                audio_link = self.url + soup.find('phonetic')['file']
+                audio_link = self.url + munge_word(
+                    soup.find('phonetic')['file'])
                 entry = DownloadEntry(
                     field_data,
                     self.get_tempfile_from_url(audio_link),
